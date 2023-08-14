@@ -1,0 +1,103 @@
+@import "../../shared/styling/variables.scss";
+.container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+        .weather-container {
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+        .items-holder {
+            position: absolute;
+
+        .navbar-container {
+            display: flex;
+            flex-direction: column;
+        
+            .title-holder {
+                display: flex;
+                justify-content: center;
+        
+               h1 {
+                color: white;
+                font-size: 25px;
+                letter-spacing: 2px;
+                }
+            }
+        
+            .search {
+                display: flex;
+                justify-content: center;
+
+            }
+          
+            form {
+                color: white;
+                display: flex;
+                padding: 3px;
+                border: 1px solid currentColor;
+                border-radius: 50px;
+                width: 100%;
+                margin: 20px;
+                
+            input {
+                border: none;
+                background: transparent;
+                margin: 0;
+                padding: 7px 20px;
+                font-size: 12px;
+        
+                &::placeholder {
+                    color: white;
+        
+                }
+            }
+          
+            .search-icon {
+                width: 20px;
+                padding: 0;
+                margin-right: 15px;
+                border: 1px solid transparent;
+                background: transparent url(".././../../assets/icons/search-icon.svg") no-repeat center;
+                cursor: pointer;
+                opacity: 0.7;
+        
+                &:hover {
+                    opacity: 1;
+                }
+            }
+          }
+        }
+        .card-holder {
+            vertical-align: middle;
+            border: 1px solid var(--light-blue);
+            background: var(--light-blue);
+            border-radius: 8px;
+            width: 85%;
+            max-width: 100%;
+            height: auto;
+            padding: 20px;
+
+            .card-header {
+                h1 {
+                    padding-bottom: 15px;
+                    text-align: center;
+                }
+            }
+
+            .card-body {
+                .card-text {
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}
