@@ -1,22 +1,23 @@
 @import "../../shared/styling/variables.scss";
+
 .container {
     position: relative;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: url('/assets/images/weather-bg.jpg');
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 0;
+    object-fit: cover;
+    background-position: bottom center;
+    background-size: cover;
 
-        .weather-container {
-            img {
-                width: 100%;
-                max-width: 100%;
-                height: auto;
-                object-fit: cover;
-                height: 100%;
-            }
-        }
-        .items-holder {
-            position: absolute;
+    .items-holder {
+        width: 90%;
+        max-width: 540px;
+        margin: 0 auto;
 
         .navbar-container {
             display: flex;
@@ -27,16 +28,21 @@
                 justify-content: center;
         
                h1 {
-                color: white;
-                font-size: 25px;
-                letter-spacing: 2px;
+                    color: white;
+                    font-size: 42px;
+                    letter-spacing: 1px;
+                    font-weight: 300;
+
+                    span {
+                        font-weight: 500;
+                    }
                 }
             }
         
             .search {
                 display: flex;
                 justify-content: center;
-
+                font-size: 16px;
             }
           
             form {
@@ -44,58 +50,123 @@
                 display: flex;
                 padding: 3px;
                 border: 1px solid currentColor;
-                border-radius: 50px;
+                border-radius: 10px;
                 width: 100%;
-                margin: 20px;
+                margin: 20px 0 10px;
                 
-            input {
-                border: none;
-                background: transparent;
-                margin: 0;
-                padding: 7px 20px;
-                font-size: 12px;
-        
-                &::placeholder {
-                    color: white;
-        
+                input {
+                    border: none;
+                    background: transparent;
+                    margin: 0;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    color: var(--white);
+                    width: 90%;
+
+                    &:focus, &:active {
+                        border: 0 none;
+                        outline: none;
+                    }
+            
+                    &::placeholder {
+                        color: white;
+                    }
                 }
-            }
-          
-            .search-icon {
-                width: 20px;
-                padding: 0;
-                margin-right: 15px;
-                border: 1px solid transparent;
-                background: transparent url(".././../../assets/icons/search-icon.svg") no-repeat center;
-                cursor: pointer;
-                opacity: 0.7;
-        
-                &:hover {
+            
+                .search-button {
+                    width: 25px;
+                    padding: 0;
+                    margin-right: 15px;
+                    border: 1px solid transparent;
+                    background: transparent url(".././../../assets/icons/search-icon.svg") no-repeat center;
+                    cursor: pointer;
                     opacity: 1;
+
+                    &:disabled,
+                    &[disabled]{
+                        cursor: default;
+                        opacity: .5;
+                    }
                 }
             }
-          }
         }
         .card-holder {
             vertical-align: middle;
-            border: 1px solid var(--light-blue);
-            background: var(--light-blue);
-            border-radius: 8px;
-            width: 85%;
-            max-width: 100%;
-            height: auto;
-            padding: 20px;
+            color: #fff;
 
-            .card-header {
-                h1 {
-                    padding-bottom: 15px;
-                    text-align: center;
+            .card {
+                background: var(--light-black);
+                border-radius: 8px;
+                height: auto;
+                padding: 20px 5%;
+                margin-top: 15px;
+
+                h3 {
+                    font-size: 28px;
+                    font-weight: 400;
+
+                    span {
+                        font-weight: 300;
+                        font-size: 18px;
+                    }
                 }
             }
 
-            .card-body {
+            .card-header {
+                .col-left, 
+                .col-right {
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+                .col-left {
+                    width: 100%;
+                    max-width: 60px;
+                }
+    
+                .col-right {
+                    width: 100%;
+                    max-width: 200px;
+                }
+            }
+
+            .card-text {
+                padding: 10px 0 5px;
+                font-weight: 300;
+                font-size: 30px;
+
+                strong {
+                    font-size: 18px;
+                    letter-spacing: .5px;
+                    font-weight: 600;
+                }
+            }
+
+            .card-footer {
+                .card {
+                    display: inline-block;
+                }
+
                 .card-text {
-                    padding: 10px 0;
+                    font-size: 22px
+                }
+
+                .col-left {
+                    width: 36%;
+                    margin-right: 3%;
+
+                    @media all and (max-width: 640px) {
+                        width: 90%;
+                        margin: 15px auto 0;
+                    }
+                }
+
+                .col-right {
+                    width: 41%;
+                   
+                    @media all and (max-width: 640px) {
+                        width: 90%;
+                        margin: 15px auto 0;
+                    }
                 }
             }
         }

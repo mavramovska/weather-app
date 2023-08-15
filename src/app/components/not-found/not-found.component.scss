@@ -1,0 +1,46 @@
+@import "../../shared/styling/variables.scss";
+
+.container {
+  background: url('/assets/images/not-found.svg');
+  background-color: var(--light-background);
+  background-size: 70% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+
+  .back-link{
+    background: var(--white);
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+    width: 190px;
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 25px 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: var(--black);
+    font-weight: 600;
+    transition: all ease .3s;
+
+    span {
+      position: absolute;
+      left: 50px;
+      transition: all ease .3s;
+    }
+
+    &:hover {
+      background: var(--black);
+      color: var(--white);
+
+      span {
+        left: 45px;
+      }
+    }
+  }
+}
