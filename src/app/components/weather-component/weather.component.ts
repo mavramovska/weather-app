@@ -35,6 +35,7 @@ export class WeatherComponent implements OnInit{
       .subscribe(
         (res : CityWeather) => {
           this.cityWeatherInformation = res;
+          this.weatherFormGroup.reset();
         },
         (err: ErrorModel) => {
           if(err.error.cod === '404') {
